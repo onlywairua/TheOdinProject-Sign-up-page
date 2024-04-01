@@ -1,226 +1,345 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Skranji:wght@400;700&display=swap" rel="stylesheet">
-	<title>Sign Up Form</title>
-	<style>
-		* {
-    		height: 100%;
-       		overflow: hidden; /* Optional: to disable scrolling */
-		}
-		.container {
-			display: flex;
-			flex-wrap: wrap;
-			max-width: 100vw;
-			max-height: 100vw;
-		}
-
-		.left_div {
-			flex-basis: 40%;
-			background-image: url('joseph-ndungu-JXAj1vKla_E-unsplash.jpg');
-			background-size: cover;
-			background-repeat: no-repeat;
-			width: 100%;
-			height: 100%;
-		}
-
-		.overlay {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin-top: 20%;
-			width: 100%;
-			height: 20%;
-			background-color: rgba(0, 0, 0, 0.4);
-
-		}
-
-		.logo-name {
-			flex-grow: 1;
-			text-align: center;
-			color: white;
-			order: 1; /*makes the logo to come before the name(ODIN)*/
-			font-family: "Skranji", system-ui;
- 			font-size: 60px;
-/* 			margin-left: 5px;*/
-			margin-right: 9vw;
- 			margin-top: 4vw;
-		}
-		.skranji-regular {
-  			font-family: "Skranji", system-ui;
-  			font-weight: 400;
- 			 font-style: normal;
-		}
-
-
-		.logo {
-			width: 15%;
-			height: auto;
-			margin-left: 170px;
-
-
-		}	
-
-		.img{
-			width: 100%;
-			height: auto;
-			object-fit: cover;
-		}
-
-		.right_div {
-			flex-basis: 60%;
-			display: flex;
-			flex-direction: column;
-/*			border: 2px solid black;*/
-			box-sizing: border-box;
-
-		}
-
-		.row {
-/*			border-bottom: 2px solid black;*/
-			padding: 5px;
-		}
-		.row:nth-child(odd) {
-		background-color: rgba(211, 211, 211, 0.1);
-
-		}
-
-		
-		.p {
-			margin-left: 50px;
-			margin-top: 100px;
-		}
-
-
-		.registration-form {
-			margin-left: 50px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Protest+Revolution&family=Reggae+One&display=swap" rel="stylesheet">
+    <title>Only Wairua</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
-
-        .form-group {
+        header {
+            background: linear-gradient(-186deg,#232023 65%, #ffffff 35%);
+            padding: 10px;
             display: flex;
-            flex-direction: column;
-        }
+            align-items: center;
+            align-items: center;
 
-        .form-group label {
-            margin-bottom: 5px;
         }
+        #profile-picture {
+            width: 250px; /* Adjust size as needed */
+            height: auto;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-left: 40px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        /*.name-div {
+            position: absolute;
+            top:390px;
+            left:225px;
+            z-index:2;
+        }*/
+        .name {
+            font-size: 24px;
+            color: white;
+            font-family: "Protest Revolution", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: underline;
+        }
+        #about-me {
+            flex: 1;
+            width: 400px;
+            height: 250px;
+            background-color: #fff;
+            margin-right: 90px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 0;
+            overflow: scroll;
+            text-align: justify;
+        }
+        #about-me h2 {
+            font-size: 26px;
+            margin-left: 15px;
+            font-family: "Beau Rivage", cursive;
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: underline;
+        }
+        #about-me p {
+            margin-left: 15px;
+            margin-right: 10px;
+            font-size: 15px;
+            font-family: "Protest Guerrilla", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .header-icons {
+            display: flex;
+            justify-content: space-between;
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            margin-left: 750px;
+        }
+        .header-icons img:hover{
+            transform:scale(1.4);
+        }
+        .logo {
+            width: 40px;
+            width: 40px;
+        }
+        .icons-div{
+            display: flex;
 
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="password"] {
-            width: 70%;
-            padding: 5px;
-            border-radius: 4px;
+        }
+        main {
+            background-color: #ffffff;
+            padding: 20px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            grid-auto-rows: auto;
+            gap: 10px; /* Adjust gap between cards */
+            padding: 20px;
+/*            border: solid black;*/
+            margin-left: 60px;
+        }
+        .custom-card {
             border: 1px solid #ccc;
-            height: 80%;
+            border-radius: 5px;
+            overflow: hidden;
+            width:calc(80% - 20px);/* Subtracting the gap between columns */
         }
-        input[type="password"]:valid {
-        	border-color: grey;
+        .card-image img {
+            width: 100%;
+            height: 200px;
         }
-        input[type="password"]:invalid {
-        	border-color: red;
+        .card-content {
+            padding: 20px;
+        }
+        .card-title {
+            margin-top: 0;
+        }
+        .title-icons-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card-icons img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .card-icons img:hover{
+      transform:scale(1.4);
+    }
+        .card-description {
+            margin-top: 10px;
         }
 
-        .button{
-        	margin-left: 50px;
-        	margin-top: 20px;
-		    border-radius: 6px;
-		    background-color: #ff7e26;
-		    color: white;
-		    padding-top: 20;
-		    padding-bottom: 20;
-		    padding-left: 40;
-		    padding-right: 40;
-		    font-size: 10pt; 
-		    font-weight: bolder;
-		    height: 15%;
-		    width: 20%;
+        footer {
+            background-color: rgba(35, 32, 35, 0.7);
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+        .footer-div {
+            display: flex;
+            align-items: center;
 
-        a {
-        	display: inline;
         }
+        
+        #footer-icons img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        #footer-icons img:hover{
+        transform:scale(1.4);
+        }
+      
+        .logo {
+            max-width: 500px;
+            max-height: 250px;    
+        }
+        .logo:hover{
+         transform:scale(1.4);
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the share icon element
+            var shareIcon = document.getElementById('share-icon');
 
-        .footer{
-		    flex-basis: 100%;
-		    flex-grow: 1;
-		    flex-shrink: 0; 
-		    text-align: center; 
-		    color: white;
-		    font-size: 1rem;
-		    margin-top: 77%;
+            // Add click event listener to the share icon
+            shareIcon.addEventListener('click', function () {
+                // Create a temporary textarea element to hold the text to be copied
+                var textArea = document.createElement("textarea");
+                // Set the value to be copied (e.g., the URL)
+                textArea.value = window.location.href;
+                // Append the textarea to the body
+                document.body.appendChild(textArea);
+                // Select the text inside the textarea
+                textArea.select();
+                // Execute the copy command
+                document.execCommand('copy');
+                // Remove the temporary textarea
+                document.body.removeChild(textArea);
 
-		}
-
-
-	</style>
+                // Optionally, you can provide feedback to the user that the URL has been copied
+                alert('URL copied to clipboard!');
+            });
+        });
+    </script>
 </head>
 <body>
-	<div class="container">
-		<div class="left_div">
-			<div class="overlay">
-				<img class="logo" src="Odin_Logo.png" alt="Odin_Logo">
-				<span class="logo-name">ODIN</span>
-			</div>
-			<div class="footer">
-			    <p>Photo by <a href="https://unsplash.com/@v4cuum?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Joseph Ndungu</a> on <a href="https://unsplash.com/photos/silhouette-of-city-buildings-during-sunset-JXAj1vKla_E?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
-			 	
-			</div>
-		</div>
-		<div class="right_div">
-			<div class="row">
-				<p class="p" >This is not a real online service! You know you need something<br>
-				like this in your life to help you realize your deepest dreams.<br>
-				Sign up <em>now</em> to get started </p>
-				<p>You <em>know</em> you want to</p>
-			</div>
-        	<div class="row">
-        		<form class="registration-form">
 
-        		<div class="form-group">
-        	    	<label for="first_name">First Name:</label>
-            		<input type="text" id="first_name" name="first_name" required>
-        		</div>
-       			<div class="form-group">
-        		    <label for="last_name">Last Name:</label>
-        		    <input type="text" id="last_name" name="last_name" required>
-       			</div>
-		        <div class="form-group">
-		            <label for="email">Email:</label>
-		            <input type="email" id="email" name="email" required>
-		        </div>
-		        <div class="form-group">
-		            <label for="phone">Phone Number:</label>
-		            <input type="tel" id="phone" name="phone">
-		        </div>
-		        <div class="form-group">
-    				<label for="password">Password:</label>
-   					<input type="password" id="password" name="password" pattern=".{8,}" title="Password must be at least 8 characters long" required>
-				</div>
-				<div class="form-group">
-				    <label for="confirm_password">Confirm Password:</label>
-				    <input type="password" id="confirm_password" name="confirm_password" pattern=".{8,}" title="Password must be at least 8 characters long" required>
-				</div>
+<header>
+   <!--  <div class="name-div">
+        <h1 class="name">Only Wairua</h1>
+    </div> -->
+    <img id="profile-picture" src="RKY_2151.jpg" alt="Your Photo">
+    
+    <div id="about-me">
+     <h2>About Wairua:</h2>
+     
+     <p>
+        An adept IT professional based in Nairobi, Kenya.I specialize in front end development. I am proficient in HTML, CSS, JavaScript, and frameworks, and excels in crafting web applications.<br> Known for my collaborative spirit,I enhance user interaction and design versatility, alongside maintaining systems and suggesting tech integrations.<br> Presently, my focus lies on innovating web-based solutions for modern businesses, driven by my passion for making a meaningful impact in the IT sector.<br> Committed to continuous growth, I am actively participating in The Odin Project, aiming to master Ruby on Rails, showcasing my dedication to advancing my skills and expertise.
+     </p>
+    <div class="header-icons">
+        <img src="github.svg">
+        <img src="linkedin.svg">
+        <img src="twitter.svg">
+        <img src="instagram.svg">
+    </div>
+          
+    </div>
+    
+</header>
 
-        
-   				</form>
-        	</div>
-        	<div class="row">
-        		<button class="button">Create Account</button>
-        		<p style="margin-left: 50px;">Already have an an account? <a href="login.html">log in</a> </p>
-        	</div>
-			
-		</div>
-	</div>
-	
+<main>
+   <div class="card-grid">
+        <div class="custom-card">
+            <div class="card-image">
+                <img src="BATA KENYA.png" alt="Project 1 Screenshot">
+            </div>
+            <div class="card-content">
+                <div class="title-icons-container">
+                    <h3 class="card-title">Bata Kenya Clone</h3>
+                    <div class="card-icons">
+                        <a href="https://onlywairua.github.io/Bata-Kenya-Clone-Page/" target="blank">
+                          <img src="github.svg" alt="GitHub Icon">  
+                        </a>
+                        <img id="share-icon" src="share.svg" alt="Share Icon">
+                    </div>
+                </div>
+                <p class="card-description">An enhanced rendition of the original webpage design, infused with personalized touches. A testament to creativity and adaptability,for aesthetic appeal in a customized clone</p>
+            </div>
+        </div>
+        <div class="custom-card">
+            <div class="card-image">
+                <img src="Dashboard.png" alt="Project 1 Screenshot">
+            </div>
+            <div class="card-content">
+                <div class="title-icons-container">
+                    <h3 class="card-title">Admin's Dashboard</h3>
+                    <div class="card-icons">
+                        <a href="https://onlywairua.github.io/Admin-Dashboard/" target="blank">
+                          <img src="github.svg" alt="GitHub Icon">  
+                        </a>
+                        <img id="share-icon" src="share.svg" alt="Share Icon">
+                    </div>
+                </div>
+                <p class="card-description">The Admin Dashboard provides a comprehensive and customizable solution for managing administrative tasks and monitoring key metrics within your application or system. Its work in progress.</p>
+            </div>
+        </div>
+       
+        <div class="custom-card">
+            <div class="card-image">
+                <img src="Sign up(Odin).png" alt="Project 1 Screenshot">
+            </div>
+            <div class="card-content">
+                <div class="title-icons-container">
+                    <h3 class="card-title">Sign up Page(Odin Project)</h3>
+                    <div class="card-icons">
+                        <a href="https://onlywairua.github.io/TheOdinProject-Sign-up-page/" target="blank">
+                          <img src="github.svg" alt="GitHub Icon">  
+                        </a>
+                        <img id="share-icon" src="share.svg" alt="Share Icon">
+                    </div>
+                </div>
+                <p class="card-description">This is a project for creating a sign up page on the Odin project. It actually is a "replica" but with personal touches. The background photo is Nairobi!</p>
+            </div>
+        </div>
+
+        <div class="custom-card">
+            <div class="card-image">
+                <img src="Safa.png" alt="Project 1 Screenshot">
+            </div>
+            <div class="card-content">
+                <div class="title-icons-container">
+                    <h3 class="card-title">The Safa Project</h3>
+                    <div class="card-icons">
+                        <a href="" target="blank">
+                          <img src="github.svg" alt="GitHub Icon">  
+                        </a>
+                        <img id="share-icon" src="share.svg" alt="Share Icon">
+                    </div>
+                </div>
+                <p class="card-description">A collaborative project to come up with a customer's sastisfacting and user friendly system. Click on the github icon for an overview</p>
+            </div>
+        </div>
+         <div class="custom-card">
+            <div class="card-image">
+                <img src="The Fusionist.png" alt="Project 1 Screenshot">
+            </div>
+            <div class="card-content">
+                <div class="title-icons-container">
+                    <h3 class="card-title">The E-Commerce Project</h3>
+                    <div class="card-icons">
+                        <a href="https://github.com/onlywairua/" target="blank">
+                          <img src="github.svg" alt="GitHub Icon">  
+                        </a>
+                        <img id="share-icon" src="share.svg" alt="Share Icon">
+                    </div>
+                </div>
+                <p class="card-description">Crafted with meticulous attention to details,to deliver a streamlined user experience. A versatile solution tailored to modern consumer needs, combining style, convenience, and reliability.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-div">
+        <div id="footer-icons">
+            <a href="https://onlywairua.github.io/Profile/" target="blank">
+                <img src="github.svg" alt="GitHub Icon">
+            </a>
+            <a href="https://www.linkedin.com/in/justwairua/" target="blank">
+                <img src="linkedin.svg" alt="LinkedIn Icon">
+            </a>
+            <a href="mailto:wairuaithanwa@gmail.com" target="blank">
+                <img src="email.svg" alt="Email Icon">
+            </a>
+            
+            <img src="twitter.svg" alt="Twitter Icon">
+            <a href="https://www.instagram.com/onlywairua/" target="blank">
+                <img src="instagram.svg" alt="Instagram Icon">
+            </a>
+        </div>
+        <div>
+           <img class="logo" src="OnlyWairua logo.png"> 
+        </div>
+     
+    </div>
+    
+    <span>&copy; Only Wairua 2024 </span>
+</footer>
 
 </body>
 </html>
